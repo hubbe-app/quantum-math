@@ -35,7 +35,7 @@ dotnet restore
 4. Run the following command to build and run the project:
 
 ```sh
-dotnet run
+dotnet run --project Quantum.Math.Api
 ```
 
 This command will build and start the API project. You should see output indicating that the API is running and listening for requests.

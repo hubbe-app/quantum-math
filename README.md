@@ -1,6 +1,6 @@
 # Quantum.Math.Api
 
-Welcome to Quantum.Math.Api! This project is a .NET Core API that provides mathematical operations.
+Welcome to Quantum.Math.Api! This project is a .NET Core API that provides mathematical operations..
 
 ## Prerequisites
 

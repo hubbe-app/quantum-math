@@ -3,8 +3,9 @@ using Quantum.Math.Api.Services;
 
 namespace Quantum.Math.Api.Controllers;
 
-[ApiController]
+
 [Route("api")]
+[ApiController]
 public class MathController : ControllerBase
 {
    private readonly IMathService mathService;
@@ -14,9 +15,9 @@ public class MathController : ControllerBase
       this.mathService = mathService;
    }
 
-   [HttpGet("/sum")]
+   [HttpGet("/api/sum")]
    public ActionResult<double> Sum(double x, double y) => mathService.Sum(x, y);
    
-   [HttpGet("/division")]
+   [HttpGet("/api/division")]
    public ActionResult<double> Division(double x, double y) => mathService.Division(x, y);
 }

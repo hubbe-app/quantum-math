@@ -45,7 +45,7 @@ This command will build and start the API project. You should see output indicat
 
 1. Open a command prompt or terminal.
 2. Navigate to the project's root directory.
-3. Run the following commands to test (if any test fails the build will stop), build and run development image:
+3. Run the following commands to test (if any test fails the docker image build will stop), build and run development image:
 
 ```sh
 docker build -f dev.dockerfile -t dev-qm .
@@ -59,8 +59,27 @@ The following API endpoint is available:
 - `GET /api/sum?x={double}&y={double}` - Calculates the sum of two doubles. Replace `{double}` with the desired double values.
 - `GET /api/division?x={double}&y={double}` - Calculates the division of two doubles. Replace `{double}` with the desired double values.
 
-### CI Configuration
 
+
+### CI/CD Configuration
+
+The tool used for CI setup was GitHub, Azure DevOps, DockerHub and the hosting environment was Azure App Service, the configuration is done through azure-pipelines.yml and it works as follows:
+
+The tool connects to the repository on GitHub and it triggers after any modifications in the main branch. After that, the build and unit tests in the application take place, in case of error, the process stops and the team is notified by email. Then if there were no errors to be corrected the build and push process of the docker image is performed and the team is notified of its conclusion.
+
+Prerequisites:
+
+1. Setup GitHub and DockerHub Service connections.
+2. Define an agent from Azure DevOps agent pool.
+
+Build succeeded example:
+![image](https://github.com/caioerhart/quantum-math/assets/124104601/4eca3c66-f2c9-4f46-8670-6cbebb7ffc1f)
+
+When an new image is pushed to DockerHub, a Webhook triggers the automated CD for hosting environment.
+![image](https://github.com/caioerhart/quantum-math/assets/124104601/e3f93146-a406-4bfe-ac62-eba885db51a3)
+
+Azure App Service supports application deployment from docker images and it is setup on Deployment Center:
+![image](https://github.com/caioerhart/quantum-math/assets/124104601/552e089f-e172-465b-8e8a-bea0ef1b59c1)
 
 
 ## Contributing

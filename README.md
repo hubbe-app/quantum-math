@@ -4,13 +4,14 @@ Welcome to Quantum.Math.Api! This project is a .NET Core API that provides mathe
 
 ## Prerequisites
 
-- [.NET Core SDK](https://dotnet.microsoft.com/download) (version 7.0 or higher) must be installed.
+- [.NET Core SDK](https://dotnet.microsoft.com/download) (version 7.0 or higher) or [Docker](https://www.docker.com/products/docker-desktop/) must be installed.
+
 
 ## Getting Started
 
 To get started with Quantum.Math.Api, follow the instructions below.
 
-### Running Tests
+### Running Tests - .NET Core SDK
 
 1. Open a command prompt or terminal.
 2. Navigate to the project's root directory.
@@ -22,7 +23,7 @@ dotnet test
 
 This command will compile and run the unit tests, providing you with the test results.
 
-### Running in Development
+### Running in Development - .NET Core SDK
 
 1. Open a command prompt or terminal.
 2. Navigate to the project's root directory.
@@ -40,12 +41,27 @@ dotnet run --project Quantum.Math.Api
 
 This command will build and start the API project. You should see output indicating that the API is running and listening for requests.
 
+### Running in Development - Docker
+
+1. Open a command prompt or terminal.
+2. Navigate to the project's root directory.
+3. Run the following commands to test (if any test fails the build will stop), build and run development image:
+
+```sh
+docker build -f dev.dockerfile -t dev-qm .
+docker run --rm -p 80:80 dev-qm
+```
+
 ### API Endpoints
 
 The following API endpoint is available:
 
 - `GET /api/sum?x={double}&y={double}` - Calculates the sum of two doubles. Replace `{double}` with the desired double values.
 - `GET /api/division?x={double}&y={double}` - Calculates the division of two doubles. Replace `{double}` with the desired double values.
+
+### CI Configuration
+
+
 
 ## Contributing
 

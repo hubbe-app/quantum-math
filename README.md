@@ -61,7 +61,7 @@ The following API endpoint is available:
 
 
 
-### CI/CD Configuration
+## CI/CD Configuration
 
 The tool used for CI setup was GitHub, Azure DevOps, DockerHub and the hosting environment was Azure App Service, the configuration is done through azure-pipelines.yml and it works as follows:
 

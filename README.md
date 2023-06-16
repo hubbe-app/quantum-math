@@ -70,7 +70,7 @@ The tool connects to the repository on GitHub and it triggers after any modifica
 
 - [DockerHub repository](https://hub.docker.com/repository/docker/caioerhart/qm-api/general)
 
-Prerequisites:
+Azure DevOps Prerequisites:
 
 1. Setup GitHub and DockerHub Service connections.
 2. Define an agent from Azure DevOps agent pool.

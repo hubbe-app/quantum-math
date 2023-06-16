@@ -45,7 +45,7 @@ This command will build and start the API project. You should see output indicat
 
 1. Open a command prompt or terminal.
 2. Navigate to the project's root directory.
-3. Run the following commands to test (if any test fails the docker image build will stop), build and run development image:
+3. Run the following commands to test (if any test fails the docker image build will stop), build and run development image locally:
 
 ```sh
 docker build -f dev.dockerfile -t dev-qm .

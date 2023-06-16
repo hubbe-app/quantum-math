@@ -59,6 +59,7 @@ The following API endpoint is available:
 - `GET /api/sum?x={double}&y={double}` - Calculates the sum of two doubles. Replace `{double}` with the desired double values.
 - `GET /api/division?x={double}&y={double}` - Calculates the division of two doubles. Replace `{double}` with the desired double values.
 
+- 'https://qm-api-hubbe.azurewebsites.net/' - Healthcheck endpoint.
 
 
 ## CI/CD Configuration
@@ -66,6 +67,8 @@ The following API endpoint is available:
 The tool used for CI setup was GitHub, Azure DevOps, DockerHub and the hosting environment was Azure App Service, the configuration is done through azure-pipelines.yml and it works as follows:
 
 The tool connects to the repository on GitHub and it triggers after any modifications in the main branch. After that, the build and unit tests in the application take place, in case of error, the process stops and the team is notified by email. Then if there were no errors to be corrected the build and push process of the docker image is performed and the team is notified of its conclusion.
+
+- 'https://hub.docker.com/repository/docker/caioerhart/qm-api/general'
 
 Prerequisites:
 
